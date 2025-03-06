@@ -424,7 +424,9 @@ params = {'k_size': 27,
 auto = BatchLeniaMC((1,H,W), dt, params=params, num_channels=num_channels, device=device)
 auto.plot_kernel()
 
-
+# Initial config is specified as follows. utils/polygons100.pickle file stores polygons, namely 1024 different shapes for areas ranging from 10 to 80.
+# The initial configuration selects a polygon, initializes everything inside the polygon with random noise and everything outside with zeros.
+# polygon_size specifies the size of the polygon and sample specifies which of the 1024 polygons to select. Seed specifies the noise.
 polygon_size = 50
 sample = 1
 seed = 3868963647
